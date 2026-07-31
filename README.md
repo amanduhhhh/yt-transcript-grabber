@@ -1,8 +1,15 @@
 # YT Transcript Grabber
+lets you download any youtube video transcript (the auto-generated captions). 
+- i noticed a lot of online sites say they can "generate transcripts" with youtube links but they just run some subpar bot that mishears a bunch of things. i think youtube's autogen captions are pretty good, and they already have a feature for you to view the transcript.
+- i just simply scrape the html and normalize the content in the transcript modal
 
-Saves the transcript YouTube shows in its side panel as a `.txt` file — no
-timestamps, no line breaks mid-sentence, no `[music]` tags. Punctuation and
-capitalisation are left exactly as YouTube produced them.
+## To use
+1. click this button in the video description
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/0f0e21aa-d885-4340-8403-ac17756e9afc" />
+
+2. simply click download or copy. YAY!!!
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/f61973d8-988d-4111-9fd5-f95467733866" />
+
 
 ## Install
 
@@ -11,30 +18,6 @@ capitalisation are left exactly as YouTube produced them.
 3. **Load unpacked** → pick this folder
 4. Reload any YouTube tab that was already open
 
-## Use
-
-Open a video → description → **Show transcript**. Then either:
-
-- click **Copy** or **Download .txt** at the top of the transcript panel, or
-- click the extension icon and use the same two buttons there.
-
-The popup's settings are shared with the in-panel buttons.
-
-### A note on copying
-
-The clipboard is written from two different places depending on which button
-you press. The in-panel button copies from the page directly. The popup
-button cannot — while a popup is open it holds focus, and Chrome refuses
-clipboard writes from an unfocused document — so the popup asks the content
-script for the text (`YTG_GET_TEXT`) and copies it itself.
-
-## Options
-
-| Option | Default | Notes |
-| --- | --- | --- |
-| Remove `[bracketed]` tags | on | `[music]`, `[laughter]`, `[clears throat]` |
-| One caption per line | off | Off = everything joins into one flowing block |
-| Wrap at | 0 | Line width for the flowing block; `0` = no line breaks |
 
 ## How it works
 
@@ -60,4 +43,4 @@ needs no `downloads` permission.
 ## If it breaks
 
 YouTube renames these class names periodically. The selectors to update all
-live at the top of `content.js`: `SEGMENT_SELECTOR` and `TIMESTAMP_JUNK`.
+live at the top of `content.js`: `SEGMENT_SELECTOR` and `TIMESTAMP_JUNK`. I'll try to update periodically but 
