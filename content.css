@@ -1,0 +1,46 @@
+.ytg-row {
+  display: flex;
+  gap: 6px;
+  margin: 4px 8px 8px;
+}
+
+.ytg-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 18px;
+  background: var(--yt-spec-badge-chip-background, rgba(255, 255, 255, 0.1));
+  color: var(--yt-spec-text-primary, #f1f1f1);
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ytg-btn:hover {
+  background: var(--yt-spec-10-percent-layer, rgba(255, 255, 255, 0.2));
+}
+
+.ytg-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  max-width: 420px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #0f0f0f;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.ytg-toast-error {
+  border-color: #f28b82;
+  color: #f28b82;
+}

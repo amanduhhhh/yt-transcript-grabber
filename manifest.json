@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YT Transcript Grabber",
+  "version": "1.0",
+  "description": "Downloads the open YouTube transcript panel as a .txt file, with timestamps and punctuation stripped.",
+  "permissions": ["storage", "activeTab", "clipboardWrite"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_title": "Download transcript",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
